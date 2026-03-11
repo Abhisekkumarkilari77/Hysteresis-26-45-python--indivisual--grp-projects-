@@ -8,6 +8,7 @@ Tiny "mini-Google" CLI:
 import sys
 
 from .crawler import Crawler
+from .seeds import SEEDS
 
 
 def fake_fetch(url: str) -> str:
@@ -20,9 +21,9 @@ def fake_fetch(url: str) -> str:
 
 def run():
     crawler = Crawler(fake_fetch)
-    # Seed with a few hosts; replace with live URLs when using a real fetcher.
-    seeds = ["http://example.com", "http://example.org", "http://google.com"]
-    crawler.crawl(seeds, limit=20)
+    # Use a large synthetic seed set (1,000+ URLs). Limit crawl to keep it fast.
+    crawl_limit = 300
+    crawler.crawl(SEEDS, limit=crawl_limit)
 
     # If a query is given as CLI arg, search once and exit.
     if len(sys.argv) > 1:

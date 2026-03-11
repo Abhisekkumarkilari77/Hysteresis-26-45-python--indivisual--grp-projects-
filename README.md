@@ -1,45 +1,304 @@
-# Hysteresis 26-45 Python Projects
+# 🚀 Hysteresis 26–45 Python Projects
 
-Collection of small-to-advanced Python portfolio projects (26�45).
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Projects](https://img.shields.io/badge/Projects-19-success)
+![Algorithms](https://img.shields.io/badge/Algorithms-Data%20Structures-orange)
+![Distributed Systems](https://img.shields.io/badge/Systems-Distributed-purple)
+![License](https://img.shields.io/badge/License-Open%20Source-green)
 
-- 27 Autocomplete (Trie)
-- 28 File System Simulator
-- 29 Maze Generator & Solver
-- 30 Mini Search Engine (TF-IDF)
-- 31 Social Graph
-- 32 Mini Git
-- 33 Log Analyzer
-- 34 Spell Checker
-- 35 Sudoku Solver
-- 36 Expression Evaluator
-- 37 Task Scheduler
-- 38 Memory Allocator
-- 39 URL Shortener
-- 40 Stock Analyzer
-- 41 Distributed Crawler & Search
-- 42 Ride Sharing Backend
-- 43 Distributed KV Store
-- 44 Multiplayer Game Engine
-- 45 K8s-like Scheduler Sim
+A curated collection of **Python system design and algorithm projects** ranging from:
 
-Run examples: `python <project>/main.py` for foldered projects, or `python 27_autocomplete.py` etc.
+* Data Structures
+* Search Engines
+* Distributed Systems
+* Backend Simulation
+* Game Engines
+* Kubernetes Scheduler Simulation
 
-## Run commands & sample outputs
-- `python 27_autocomplete.py` ? `['python', 'pytorch', 'pycharm', 'pyramid', 'py']`
-- `python 28_fs_sim.py` ? `['file.txt']` then `hello`
-- `python 29_maze.py` ? `Path length: 85`
-- `python 30_mini_search.py` ? `[(1, -0.8109...), (2, -0.8109...)]`
-- `python 31_social_graph.py` ? `Recommend for Alice: ['Charlie']` / `Path Alice->Charlie: [...]`
-- `python 32_mini_git.py` ? commits list then `Index after checkout: {'README.md': 'hello'}`
-- `python 33_log_analyzer.py` ? `([('127.0.0.1', 2), ('10.0.0.2', 1)], [('200', 1), ('401', 1), ('404', 1)])`
-- `python 34_spell_checker.py` ? `python`
-- `python 35_sudoku.py` ? solved grid printed
-- `python 36_expr_eval.py` ? `16.0`
-- `python 37_scheduler.py` ? `hello`
-- `python 38_allocator.py` ? `[(0, 100, True)]`
-- `python 39_url_shortener.py` ? e.g., `KrthEZ -> https://example.com`
-- `python 40_stock_analyzer.py` ? SMA/EMA arrays and `Trend: up`
-- `python -m 41_crawler.main` ? `Search 'example': [...]`
-- `python -m 42_rideshare.main` ? ride lifecycle events, `Fare: 20.93`
-- `DEMO_DURATION=1 python -m 44_game_engine.main` ? room creation lines, `Rooms: ['room-1', 'room-2']`
-- `python -m 45_k8s_sim.main` ? node states, e.g., `node-1 alive pods [...]`
+All projects are **standalone**, lightweight, and require **no external dependencies**.
+
+---
+
+# 📚 Project Catalog
+
+| ID | Project                      | Category              |
+| -- | ---------------------------- | --------------------- |
+| 27 | Autocomplete (Trie)          | Data Structures       |
+| 28 | File System Simulator        | System Design         |
+| 29 | Maze Generator & Solver      | Algorithms            |
+| 30 | Mini Search Engine (TF-IDF)  | Information Retrieval |
+| 31 | Social Graph                 | Graph Algorithms      |
+| 32 | Mini Git                     | Version Control       |
+| 33 | Log Analyzer                 | Data Processing       |
+| 34 | Spell Checker                | NLP                   |
+| 35 | Sudoku Solver                | Backtracking          |
+| 36 | Expression Evaluator         | Parsing               |
+| 37 | Task Scheduler               | OS Concepts           |
+| 38 | Memory Allocator             | Operating Systems     |
+| 39 | URL Shortener                | Backend Design        |
+| 40 | Stock Analyzer               | Data Analysis         |
+| 41 | Distributed Crawler & Search | Distributed Systems   |
+| 42 | Ride Sharing Backend         | System Design         |
+| 43 | Distributed KV Store         | Databases             |
+| 44 | Multiplayer Game Engine      | Networking            |
+| 45 | Kubernetes-like Scheduler    | Cloud Systems         |
+
+---
+
+# 🗂 Project Folder Structure
+
+```
+python-projects/
+│
+├── 27_autocomplete.py
+├── 28_filesystem.py
+├── 29_maze.py
+├── 30_search_engine.py
+├── 31_social_graph.py
+├── 32_mini_git.py
+├── 33_log_analyzer.py
+├── 34_spell_checker.py
+├── 35_sudoku_solver.py
+├── 36_expression_eval.py
+├── 37_task_scheduler.py
+├── 38_memory_allocator.py
+├── 39_url_shortener.py
+├── 40_stock_analyzer.py
+│
+├── 41_crawler/
+│   ├── main.py
+│   ├── crawler.py
+│   ├── index.py
+│   └── seeds.py
+│
+├── 42_rideshare/
+│   ├── main.py
+│   ├── models.py
+│   └── service.py
+│
+├── 43_kv_store/
+│   ├── server.py
+│   ├── client.py
+│   └── storage.py
+│
+├── 44_game_engine/
+│   ├── main.py
+│   ├── rooms.py
+│   └── player.py
+│
+└── 45_scheduler/
+    ├── main.py
+    ├── node.py
+    └── pod.py
+```
+
+---
+
+# ⚙️ How to Run
+
+### Single-file projects
+
+```
+python 27_autocomplete.py
+python 28_filesystem.py
+python 35_sudoku_solver.py
+```
+
+---
+
+### Folder-based projects
+
+```
+python -m 41_crawler.main
+python -m 42_rideshare.main
+python -m 44_game_engine.main
+```
+
+---
+
+# 🧠 System Architecture Overview
+
+## Distributed Crawler & Search Engine (Project 41)
+
+```
+          +-------------+
+          |  Seed URLs  |
+          +------+------+
+                 |
+                 v
+           +-----+------+
+           |  Crawler   |
+           +-----+------+
+                 |
+                 v
+           +-----+------+
+           | HTML Parser|
+           +-----+------+
+                 |
+                 v
+           +-----+------+
+           |  Indexer   |
+           +-----+------+
+                 |
+                 v
+           +-----+------+
+           | Search API |
+           +------------+
+```
+
+**Workflow**
+
+1. Seed URLs start the crawl
+2. Pages are fetched
+3. Links are extracted
+4. Text content is indexed
+5. Queries return ranked results
+
+---
+
+## Distributed Key-Value Store (Project 43)
+
+```
+          +-----------+
+Client -->|  Server   |
+          +-----+-----+
+                |
+                v
+          +-----+-----+
+          | In-Memory |
+          |  Storage  |
+          +-----------+
+```
+
+Supports operations:
+
+* SET key value
+* GET key
+* DELETE key
+* TTL expiration
+* Pub/Sub messaging
+
+---
+
+## Kubernetes-like Scheduler (Project 45)
+
+```
+           +----------+
+           |  Pods    |
+           +----+-----+
+                |
+                v
+          +-----+-----+
+          | Scheduler |
+          +-----+-----+
+                |
+      +---------+----------+
+      |         |          |
+   Node-1    Node-2     Node-3
+```
+
+Scheduler assigns pods to nodes based on:
+
+* CPU capacity
+* Memory availability
+* Node load balancing
+
+---
+
+# 📊 Example Outputs
+
+### Autocomplete
+
+```
+['python', 'pytorch', 'pycharm', 'pyramid', 'py']
+```
+
+---
+
+### Maze Solver
+
+```
+Path length: 85
+```
+
+---
+
+### URL Shortener
+
+```
+KrthEZ -> https://example.com
+```
+
+---
+
+### Distributed Crawler
+
+```
+Mini search ready. Type a query (or 'exit').
+
+> link.springer.com
+1. https://link.springer.com (score=6.000)
+2. https://www.springer.com (score=4.000)
+```
+
+---
+
+Distributed Crawler & Search (Project 41)
+
+Run:
+
+python -m 41_crawler.main
+
+Output:
+
+Mini search ready. Type a query (or 'exit').
+
+> link.springer.com
+1. https://link.springer.com (score=6.000)
+2. https://www.springer.com (score=4.000)
+3. https://gemini.google.com (score=2.000)
+4. https://www.anthropic.com (score=2.000)
+5. https://platform.openai.com (score=2.000)
+
+> mits.ac.in
+1. https://nptel.ac.in (score=4.000)
+🚖 Ride Sharing Backend (Project 42)
+Ride requested
+Driver assigned
+Ride started
+Ride completed
+Fare: 20.93
+🎮 Multiplayer Game Engine (Project 44)
+Rooms: ['room-1', 'room-2']
+☸ Kubernetes-like Scheduler Simulator (Project 45)
+Node-1 -> Pod A
+Node-2 -> Pod B
+Node-3 -> Pod C
+🎯 Learning Goals
+
+These projects demonstrate:
+
+Data Structures
+
+Algorithms
+
+Backend Architecture
+
+Distributed Systems
+
+Search Engine Design
+
+Graph Algorithms
+
+Cloud Scheduling Concepts
+
+⚙ Requirements
+
+Python 3.8+
+
+Check version:
+
+python --version
+⭐ Purpose
+
+This repository acts as a Python backend & system design portfolio containing 19 practical projects covering core software engineering concepts.
