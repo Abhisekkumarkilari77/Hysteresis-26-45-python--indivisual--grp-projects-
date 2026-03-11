@@ -1,6 +1,7 @@
 # indexer.py
 from collections import Counter, defaultdict
 from typing import Dict, List, Tuple
+from .parser import tokenize
 
 class InvertedIndex:
     def __init__(self):
@@ -14,7 +15,7 @@ class InvertedIndex:
         self.docs[doc_id] = text
 
     def search(self, query: str, pagerank: Dict[str, float], top_k: int = 5):
-        terms = query.lower().split()
+        terms = tokenize(query)
         scores = defaultdict(float)
         for term in terms:
             for doc, tf in self.index.get(term, []):
