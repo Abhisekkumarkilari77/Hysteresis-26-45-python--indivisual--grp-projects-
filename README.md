@@ -292,6 +292,59 @@ Graph Algorithms
 
 Cloud Scheduling Concepts
 
+---
+
+# Recent Run Outputs (Mar 12, 2026)
+
+### Ride Sharing Backend (Project 42)
+
+Command:
+
+```
+python -m 42_rideshare.main
+```
+
+Output:
+
+```
+[driver_assigned] {'ride_id': 'f9b20506', 'passenger_id': 'p1', 'driver_id': 'd1', 'pickup': (12.91, 77.6), 'dropoff': (12.95, 77.64), 'status': 'driver_assigned', 'requested_at': 1773289301.082239, 'started_at': None, 'ended_at': None, 'fare': None}
+[ride_started] {'ride_id': 'f9b20506', 'passenger_id': 'p1', 'driver_id': 'd1', 'pickup': (12.91, 77.6), 'dropoff': (12.95, 77.64), 'status': 'in_progress', 'requested_at': 1773289301.082239, 'started_at': None, 'ended_at': None, 'fare': None}
+[ride_completed] {'ride_id': 'f9b20506', 'passenger_id': 'p1', 'driver_id': 'd1', 'pickup': (12.91, 77.6), 'dropoff': (12.95, 77.64), 'status': 'completed', 'requested_at': 1773289301.082239, 'started_at': None, 'ended_at': None, 'fare': 20.93}
+Fare: 20.93
+```
+
+### Distributed KV Store (Project 43)
+
+Command:
+
+```
+C:\\Users\\abhis\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m 43_kv_store.main
+```
+
+Output:
+
+```
+Hash ring node for 'user:1': nodeC
+b'OK\n'
+b'bar\n'
+```
+
+### Kubernetes-like Scheduler (Project 45)
+
+Command:
+
+```
+C:\\Users\\abhis\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m 45_k8s_sim.main
+```
+
+Output:
+
+```
+node-0 dead pods []
+node-1 alive pods ['pod-6', 'pod-7', 'pod-4', 'pod-9', 'pod-1', 'pod-3']
+node-2 alive pods ['pod-2', 'pod-8', 'pod-5', 'pod-0']
+```
+
 ⚙ Requirements
 
 Python 3.8+
